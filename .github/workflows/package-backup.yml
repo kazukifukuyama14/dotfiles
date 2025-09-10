@@ -13,10 +13,14 @@ on:
 jobs:
   backup:
     runs-on: macos-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Homebrew
         run: |
@@ -91,7 +95,7 @@ jobs:
           else
             git add package-backup/
             git commit -m "chore: update package backup files [skip ci]"
-            git push
+            git push origin main
           fi
 
       - name: Create backup summary
