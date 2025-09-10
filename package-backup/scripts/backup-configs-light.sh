@@ -30,19 +30,19 @@ declare -a CONFIG_FILES=(
     ".bashrc"
     ".bash_profile"
     ".profile"
-    
+
     # Git設定
     ".gitconfig"
     ".gitignore"
     ".gitignore_global"
-    
+
     # その他の設定ファイル
     ".yarnrc"
     ".stCommitMsg"
     ".hgignore_global"
     ".lesshst"
     ".Brewfile"
-    
+
     # アプリケーション設定
     ".claude.json"
 )
@@ -76,7 +76,7 @@ log "重要な設定ファイルを個別バックアップ中..."
 # .configディレクトリから重要なファイルのみをコピー
 if [ -d "${HOME_DIR}/.config" ]; then
     mkdir -p "${BACKUP_DIR}/config_files_${TIMESTAMP}"
-    
+
     # 重要な設定ファイルのみをコピー
     for config_file in "starship.toml" "git/config" "nvim/init.lua" "nvim/init.vim"; do
         if [ -f "${HOME_DIR}/.config/${config_file}" ]; then
@@ -85,7 +85,7 @@ if [ -d "${HOME_DIR}/.config" ]; then
             log "設定ファイルをバックアップ: ${config_file}"
         fi
     done
-    
+
     # ディレクトリが空でない場合のみアーカイブ
     if [ "$(find "${BACKUP_DIR}/config_files_${TIMESTAMP}" -type f | wc -l)" -gt 0 ]; then
         tar -czf "${BACKUP_DIR}/config_files_${TIMESTAMP}.tar.gz" -C "${BACKUP_DIR}" "config_files_${TIMESTAMP}"
