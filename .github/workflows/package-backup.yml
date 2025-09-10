@@ -54,8 +54,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          # 必要なツールをインストール
-          /opt/homebrew/bin/brew install jq
+          # 必要なツールをインストール（既にインストール済みの場合は警告を抑制）
+          /opt/homebrew/bin/brew install jq 2>/dev/null || true
           pip3 install --upgrade pip
 
       - name: Run package backup

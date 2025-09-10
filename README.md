@@ -129,4 +129,3 @@ gem install --file=package-backup/gem/Gemfile_latest
 ## 詳細情報
 
 より詳細な使用方法やトラブルシューティングについては、[package-backup/README.md](package-backup/README.md) を参照してください。
-# Test update
