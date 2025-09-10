@@ -32,6 +32,9 @@ jobs:
           echo "$(/opt/homebrew/bin/brew shellenv)" >> $GITHUB_ENV
           echo "$(/opt/homebrew/bin/brew shellenv)" >> $GITHUB_OUTPUT
 
+          # Homebrewの動作確認
+          /opt/homebrew/bin/brew --version
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -50,7 +53,7 @@ jobs:
       - name: Install dependencies
         run: |
           # 必要なツールをインストール
-          brew install jq
+          /opt/homebrew/bin/brew install jq
           pip3 install --upgrade pip
 
       - name: Run package backup
@@ -60,6 +63,8 @@ jobs:
           # 軽量バックアップを使用（GitHub用）
           ./scripts/backup-configs-light.sh
           # パッケージ管理ツールのバックアップ
+          # Homebrewのパスを明示的に指定
+          export PATH="/opt/homebrew/bin:$PATH"
           ./scripts/backup-homebrew.sh
           ./scripts/backup-npm.sh
           ./scripts/backup-pip.sh
