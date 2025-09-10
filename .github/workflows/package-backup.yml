@@ -1,0 +1,106 @@
+name: Package Backup
+
+on:
+  schedule:
+    # 毎週日曜日の午前2時（JST）に実行
+    - cron: "0 17 * * 0"
+  workflow_dispatch:
+    # 手動実行も可能
+  push:
+    branches:
+      - main
+    paths:
+      - "package-backup/**"
+
+jobs:
+  backup:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Homebrew
+        run: |
+          # Homebrewが既にインストールされているかチェック
+          if ! command -v brew &> /dev/null; then
+            echo "Homebrew is not installed. Installing..."
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          fi
+
+          # PATHの設定
+          echo "$(/opt/homebrew/bin/brew shellenv)" >> $GITHUB_ENV
+          echo "$(/opt/homebrew/bin/brew shellenv)" >> $GITHUB_OUTPUT
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.0"
+
+      - name: Install dependencies
+        run: |
+          # 必要なツールをインストール
+          brew install jq
+          pip3 install --upgrade pip
+
+      - name: Run package backup
+        run: |
+          cd package-backup
+          chmod +x scripts/*.sh
+          ./scripts/backup-all.sh
+
+      - name: Check backup results
+        run: |
+          echo "=== Backup Results ==="
+          find package-backup -name "*_latest*" -type f | head -10
+          echo ""
+          echo "=== Backup File Counts ==="
+          echo "Homebrew files: $(find package-backup/homebrew -name "*_latest*" | wc -l)"
+          echo "npm files: $(find package-backup/npm -name "*_latest*" | wc -l)"
+          echo "pip files: $(find package-backup/pip -name "*_latest*" | wc -l)"
+          echo "gem files: $(find package-backup/gem -name "*_latest*" | wc -l)"
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          # 変更があるかチェック
+          if git diff --quiet; then
+            echo "No changes to commit"
+          else
+            git add package-backup/
+            git commit -m "chore: update package backup files [skip ci]"
+            git push
+          fi
+
+      - name: Create backup summary
+        run: |
+          echo "## 📦 Package Backup Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🕐 Backup Time" >> $GITHUB_STEP_SUMMARY
+          echo "\`$(date)\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📊 Backup Statistics" >> $GITHUB_STEP_SUMMARY
+          echo "| Tool | Files |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Homebrew | $(find package-backup/homebrew -name "*_latest*" | wc -l) |" >> $GITHUB_STEP_SUMMARY
+          echo "| npm | $(find package-backup/npm -name "*_latest*" | wc -l) |" >> $GITHUB_STEP_SUMMARY
+          echo "| pip | $(find package-backup/pip -name "*_latest*" | wc -l) |" >> $GITHUB_STEP_SUMMARY
+          echo "| gem | $(find package-backup/gem -name "*_latest*" | wc -l) |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📁 Latest Backup Files" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          find package-backup -name "*_latest*" -type f | head -20 >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
