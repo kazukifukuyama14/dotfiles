@@ -1,0 +1,7 @@
+Package index page cache location (pip v23.3+): /Users/runner/Library/Caches/pip/http-v2
+Package index page cache location (older pips): /Users/runner/Library/Caches/pip/http
+Package index page cache size: 2.0 MB
+Number of HTTP files: 12
+Locally built wheels location: /Users/runner/Library/Caches/pip/wheels
+Locally built wheels size: 0 bytes
+Number of locally built wheels: 0
