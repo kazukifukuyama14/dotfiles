@@ -1,0 +1,11 @@
+Package           Version
+----------------- ---------
+certifi           2025.10.5
+cffi              2.0.0
+cryptography      46.0.3
+pip               25.3
+pycparser         2.23
+pydantic_core     2.41.4
+rpds-py           0.28.0
+typing_extensions 4.15.0
+wheel             0.45.1

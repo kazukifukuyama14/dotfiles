@@ -1,0 +1,9 @@
+{
+  "name": "global-packages-backup",
+  "version": "1.0.0",
+  "description": "Global npm packages backup",
+  "dependencies": {
+    "corepack": "0.34.0",
+    "npm": "10.9.4",
+  }
+}

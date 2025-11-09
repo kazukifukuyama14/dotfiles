@@ -1,0 +1,11 @@
+Python version:
+Python 3.14.0
+
+pip version:
+pip 25.3 from /opt/homebrew/lib/python3.14/site-packages/pip (python 3.14)
+
+Python path:
+/opt/homebrew/bin/python3
+
+pip path:
+/opt/homebrew/bin/pip3
