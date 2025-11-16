@@ -1,0 +1,8 @@
+Node.js version:
+v22.21.1
+
+npm version:
+10.9.4
+
+npx version:
+10.9.4

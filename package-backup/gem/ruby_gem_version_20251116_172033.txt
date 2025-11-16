@@ -1,0 +1,11 @@
+Ruby version:
+ruby 3.0.7p220 (2024-04-23 revision 724a071175) [arm64-darwin23]
+
+gem version:
+3.2.33
+
+Ruby path:
+/Users/runner/hostedtoolcache/Ruby/3.0.7/arm64/bin/ruby
+
+gem path:
+/Users/runner/hostedtoolcache/Ruby/3.0.7/arm64/bin/gem
