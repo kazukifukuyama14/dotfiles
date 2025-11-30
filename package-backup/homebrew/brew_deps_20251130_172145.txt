@@ -1,0 +1,119 @@
+ant: cairo fontconfig freetype gettext giflib glib graphite2 harfbuzz icu4c@78 jpeg-turbo libpng libtiff libunistring libx11 libxau libxcb libxdmcp libxext libxrender little-cms2 lz4 lzo openjdk pcre2 pixman xorgproto xz zstd
+aria2: ca-certificates gettext libssh2 libunistring openssl@3 readline sqlite
+aws-sam-cli: ca-certificates certifi cffi cryptography libyaml mpdecimal openssl@3 pycparser pydantic python@3.13 readline rpds-py sqlite xz
+azure-cli: ca-certificates libsodium libyaml mpdecimal openssl@3 python@3.13 readline sqlite xz
+bazelisk: 
+berkeley-db@5: 
+azure/bicep/bicep: 
+brotli: 
+c-ares: 
+ca-certificates: 
+cairo: fontconfig freetype gettext glib libpng libunistring libx11 libxau libxcb libxdmcp libxext libxrender lzo pcre2 pixman xorgproto
+carthage: 
+certifi: ca-certificates
+cffi: pycparser
+cmake: 
+cryptography: ca-certificates cffi openssl@3 pycparser
+curl: brotli ca-certificates libnghttp2 libnghttp3 libngtcp2 libssh2 lz4 openssl@3 rtmpdump xz zstd
+fontconfig: freetype gettext libpng libunistring
+freetype: libpng
+gcc: gmp isl libmpc lz4 mpfr xz zstd
+gcc@13: gmp isl libmpc lz4 mpfr xz zstd
+gcc@14: gmp isl libmpc lz4 mpfr xz zstd
+gdbm: 
+geckodriver: 
+gettext: libunistring
+gh: 
+giflib: 
+git: gettext libunistring pcre2
+git-lfs: 
+glib: gettext libunistring pcre2
+gmp: 
+gnu-tar: 
+gnupg: ca-certificates gettext gmp gnutls libassuan libevent libgcrypt libgpg-error libidn2 libksba libnghttp2 libtasn1 libunistring libusb nettle npth openssl@3 p11-kit pinentry readline unbound
+gnutls: ca-certificates gettext gmp libevent libidn2 libnghttp2 libtasn1 libunistring nettle openssl@3 p11-kit unbound
+gradle: cairo fontconfig freetype gettext giflib glib gradle-completion graphite2 harfbuzz icu4c@78 jpeg-turbo libpng libtiff libunistring libx11 libxau libxcb libxdmcp libxext libxrender little-cms2 lz4 lzo openjdk pcre2 pixman xorgproto xz zstd
+gradle-completion: 
+graphite2: 
+harfbuzz: cairo fontconfig freetype gettext glib graphite2 icu4c@78 libpng libunistring libx11 libxau libxcb libxdmcp libxext libxrender lzo pcre2 pixman xorgproto
+icu4c@78: 
+isl: gmp
+jpeg-turbo: 
+jq: oniguruma
+kotlin: cairo fontconfig freetype gettext giflib glib graphite2 harfbuzz icu4c@78 jpeg-turbo libpng libtiff libunistring libx11 libxau libxcb libxdmcp libxext libxrender little-cms2 lz4 lzo openjdk pcre2 pixman xorgproto xz zstd
+krb5: ca-certificates openssl@3
+libassuan: gettext libgpg-error libunistring
+libevent: ca-certificates openssl@3
+libgcrypt: gettext libgpg-error libunistring
+libgpg-error: gettext libunistring
+libidn2: gettext libunistring
+libksba: gettext libgpg-error libunistring
+libmpc: gmp mpfr
+libnghttp2: 
+libnghttp3: 
+libngtcp2: ca-certificates openssl@3
+libpng: 
+libpq: ca-certificates icu4c@78 krb5 openssl@3
+libsodium: 
+libssh2: ca-certificates openssl@3
+libtasn1: 
+libtiff: jpeg-turbo lz4 xz zstd
+libunistring: 
+libusb: 
+libuv: 
+libx11: libxau libxcb libxdmcp xorgproto
+libxau: xorgproto
+libxcb: libxau libxdmcp xorgproto
+libxdmcp: xorgproto
+libxext: libx11 libxau libxcb libxdmcp xorgproto
+libxrender: libx11 libxau libxcb libxdmcp xorgproto
+libyaml: 
+little-cms2: jpeg-turbo libtiff lz4 xz zstd
+llvm@18: lz4 xz zstd
+lz4: 
+lzo: 
+maven: cairo fontconfig freetype gettext giflib glib graphite2 harfbuzz icu4c@78 jpeg-turbo libpng libtiff libunistring libx11 libxau libxcb libxdmcp libxext libxrender little-cms2 lz4 lzo openjdk pcre2 pixman xorgproto xz zstd
+mpdecimal: 
+mpfr: gmp
+nettle: gmp
+ninja: 
+node@22: brotli c-ares ca-certificates icu4c@78 libnghttp2 libnghttp3 libngtcp2 libuv lz4 openssl@3 readline simdjson simdutf sqlite uvwasi xz zstd
+npth: 
+oniguruma: 
+openjdk: cairo fontconfig freetype gettext giflib glib graphite2 harfbuzz icu4c@78 jpeg-turbo libpng libtiff libunistring libx11 libxau libxcb libxdmcp libxext libxrender little-cms2 lz4 lzo pcre2 pixman xorgproto xz zstd
+openssl@1.1: ca-certificates
+openssl@3: ca-certificates
+p11-kit: ca-certificates libtasn1
+p7zip: 
+hashicorp/tap/packer: 
+pcre2: 
+perl: berkeley-db@5 gdbm
+pinentry: gettext libassuan libgpg-error libunistring
+pipx: ca-certificates lz4 mpdecimal openssl@3 python@3.14 readline sqlite xz zstd
+pixman: 
+pkgconf: 
+pycparser: 
+pydantic: 
+python@3.13: ca-certificates mpdecimal openssl@3 readline sqlite xz
+python@3.14: ca-certificates lz4 mpdecimal openssl@3 readline sqlite xz zstd
+readline: 
+rpds-py: 
+rtmpdump: ca-certificates openssl@3
+ruby@3.3: ca-certificates libyaml openssl@3
+rustup: 
+selenium-server: cairo fontconfig freetype gettext giflib glib graphite2 harfbuzz icu4c@78 jpeg-turbo libpng libtiff libunistring libx11 libxau libxcb libxdmcp libxext libxrender little-cms2 lz4 lzo openjdk pcre2 pixman xorgproto xz zstd
+simdjson: 
+simdutf: icu4c@78
+sqlite: readline
+swiftformat: 
+tcl-tk@8: ca-certificates openssl@3
+unbound: ca-certificates libevent libnghttp2 openssl@3
+unxip: 
+uvwasi: libuv
+wget: ca-certificates gettext libidn2 libunistring openssl@3
+xcbeautify: 
+xcodes: 
+xorgproto: 
+xz: 
+yq: 
+zstd: lz4 xz

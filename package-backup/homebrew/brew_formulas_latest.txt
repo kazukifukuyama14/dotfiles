@@ -1,1 +1,1 @@
-brew_formulas_20251123_172057.txt
+brew_formulas_20251130_172145.txt

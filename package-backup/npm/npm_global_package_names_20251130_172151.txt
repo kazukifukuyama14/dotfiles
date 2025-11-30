@@ -1,0 +1,3 @@
+lib@
+corepack@0.34.0
+npm@10.9.4

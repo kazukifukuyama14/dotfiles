@@ -1,0 +1,11 @@
+; "builtin" config from /opt/homebrew/Cellar/node@22/22.21.1_4/lib/node_modules/npm/npmrc
+
+prefix = "/opt/homebrew"
+
+; node bin location = /opt/homebrew/Cellar/node@22/22.21.1_4/bin/node
+; node version = v22.21.1
+; npm local prefix = /Users/runner/work/dotfiles/dotfiles/package-backup
+; npm version = 10.9.4
+; cwd = /Users/runner/work/dotfiles/dotfiles/package-backup
+; HOME = /Users/runner
+; Run `npm config ls -l` to show all defaults.
